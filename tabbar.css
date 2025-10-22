@@ -1,0 +1,72 @@
+/* tabbar.css */
+#left-tabbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background-color: #f8f9fa; /* Màu nền sáng */
+    padding-top: 60px;
+    z-index: 1031; /* Cao hơn z-index của header (1030) */
+    border-right: 1px solid #dee2e6;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#left-tabbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#left-tabbar nav ul li a {
+    display: block;
+    color: #212529; /* Màu chữ tối */
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#left-tabbar nav ul li a:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+#left-tabbar nav ul li a.active {
+    background-color: #0d6efd; /* Màu xanh dương của Bootstrap */
+    color: white;
+    font-weight: bold;
+}
+
+/* Đẩy nội dung chính của trang sang phải để không bị che */
+body {
+    padding-left: 220px;
+}
+
+/* Điều chỉnh cho màn hình nhỏ */
+@media (max-width: 768px) {
+    #left-tabbar {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        top: auto;
+        border-right: 0;
+        border-top: 1px solid #dee2e6;
+        padding-top: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #left-tabbar nav ul {
+        display: flex;
+    }
+
+    #left-tabbar nav ul li a {
+        padding: 10px 15px;
+    }
+
+    body {
+        padding-left: 0;
+        padding-bottom: 60px; /* Khoảng trống cho tabbar ở dưới */
+    }
+}
